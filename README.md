@@ -3,7 +3,7 @@ A bar chart designed with CSS that graphically displays the income made in a wee
 
 # Practice project
 ---
-<a href="https://cgpa-calculator-steel.vercel.app">Live Site Link</a>
+<a href="https://christiankaycee.github.io/MoneyBarChart/">Live Site Link</a>
 
       -- Made with 💌
          -- By KingShow
