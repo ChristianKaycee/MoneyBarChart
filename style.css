@@ -1,0 +1,241 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+    --Font-size: 18px;
+}
+body{
+    background-color:var(--Cream);
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    height: 100vh;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.top{
+    background-color: var(--Soft-red);
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top .left p{
+    color: var(--Cream);
+}
+.bold{
+    font-weight: bold;
+    font-size: 2em;
+}
+.body{
+    background-color: var(--Very-pale-orange);
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.head .bold{
+    text-align: center;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text{
+    color: var(--Medium-brown);
+}
+.bottom .left p:last-child{
+    font-size: 2.5em;
+}
+.right{
+    text-align: right;
+}
+.percent{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.graph{
+    padding-bottom: 20px;
+    height: 150px;
+    border-bottom: 1px solid var(--Medium-brown);
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    place-items: center;
+    align-items: flex-end;
+}
+.bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.chart{
+    position: relative;
+    background-color: var(--Soft-red);
+    width: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+}
+.bar:nth-child(3) > .chart{
+    background-color: var(--Cyan);
+}
+.chart .box{
+    position: absolute;
+    top: -10px;
+    transform: translateY(-90%);
+    background-color: var(--Dark-brown);
+    color: var(--Very-pale-orange);
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.chart:hover{
+    background-color: rgba(236, 119, 95,0.8);
+    border:3px dotted var(--Dark-brown);
+}
+.bar:nth-child(3) > .chart:hover{
+    background-color: rgba(118, 181, 188,0.8);
+}
+.chart:hover .box{
+    visibility: visible;
+    opacity: 1;
+}
+@media (max-width:560px) {
+    .container{
+        width: 90%;
+    }
+}
+@media (max-width:450px){
+    .chart{
+        width: 40px;
+    }
+    .chart .box{
+        font-size: .8em;
+        width: 45px;
+        height: 35px;
+    }
+}
+@media (max-width:390px) {
+    .bold{
+        font-size: 1.5em;
+    }
+    .chart .box{
+        font-size: .7em;
+        width: 40px;
+    }
+}
+@media (max-width:365px) {
+    .chart{
+        width: 35px;
+    }
+}
+@media (max-width:345px) {
+    .chart{
+        width: 30px;
+    }
+}
+@media (max-width:311px) {
+    .chart{
+        width: 20px;
+        border-radius: 5px;
+    }
+    .bold{
+        font-size: 1.3em;
+    }
+    .bottom .left p:last-child{
+        font-size: 1.5em;
+    }
+    .bottom{
+        gap: 2px;
+    }
+}
+@media (max-width:270px) {
+    .graph{
+        grid-template-columns: repeat(4,1fr);
+        margin-bottom: 10px;
+        border-bottom: none;
+    }
+    .chart{
+        width: 30px;
+        border-radius: 5px;
+    }
+    .bold{
+        font-size: 1em;
+    }
+    .bottom .left p:last-child{
+        font-size: 1.4em;
+    }
+    .bottom{
+        gap: 1px;
+    }
+}
+@media (max-width:210px) {
+    .top .left p{
+        font-size: .8em;
+    }
+    .right img{
+        width: 50px;
+        height: 50px;
+    }
+    .body{
+        height: 500px;
+    }
+    .bold{
+        font-size: .8em;
+        margin-bottom: 20px;
+    }
+    .bottom .left p:last-child{
+        font-size: 1.4em;
+    }
+    .bottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .percent,.right{
+        text-align: center;
+    }
+}
+@media (max-width:170px) {
+    .chart{
+        width: 20px;
+        border-radius: 5px;
+    }
+    .right img{
+        width: 30px;
+        height: 30px;
+    }
+}
